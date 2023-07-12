@@ -1,0 +1,184 @@
+@import "../../style.scss";
+
+.navbar {
+    @include themify($themes) {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        height: 50px;
+        border-bottom: 1px solid themed("border");
+        position: sticky;
+        top: 0;
+        background-color: themed("bg");
+        color: themed("textColor");
+        z-index: 999;
+
+
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            span {
+                font-weight: bold;
+                color: themed("logo");
+
+            }
+
+            .mob_menu {
+                display: none;
+
+                @include mobile {
+                    display: flex;
+                    cursor: pointer;
+                }
+
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border: 1px solid themed("border");
+                border-radius: 5px;
+                padding: 5px;
+
+                input {
+                    border: none;
+                    outline: none;
+                    width: 300px;
+                    background-color: transparent;
+                    color: themed("textColor");
+
+                }
+
+                .icon_search {
+                    cursor: pointer;
+                }
+
+                @include tablet {
+                    width: 200px;
+                }
+
+                @include mobile {
+                    position: absolute;
+                    justify-content: space-around;
+                    left: 0;
+                    top: 70px;
+                    width: 96.5vw;
+                    background-color: themed("bg");
+                    border-radius: 0;
+                }
+
+
+            }
+
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            @include mobile {
+                align-items: flex-end;
+                gap: 0px;
+            }
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 500;
+
+                @include tablet {
+                    display: none;
+                }
+                @include mobile {
+                    display: none;
+                }
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+
+                }
+
+                span {}
+            }
+
+            .icon {
+                @include mobile {
+                    display: none;
+                }
+            }
+
+            button {
+                border: none;
+                background: none;
+                padding: 0;
+                cursor: pointer;
+                color: themed("textColor");
+
+            }
+        }
+
+        .menu_container {
+            position: absolute;
+            left: 0;
+            top: 111px;
+            z-index: 999;
+            background: themed("bg");
+            padding: 20px;
+            border: 1px solid lightgrey;
+
+            .menu{                
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .user{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+
+                    }
+
+                    span{
+                        font-size: 16px;
+
+                    }
+
+                }
+
+                .item{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img{
+                        width: 30px;
+
+                    }
+
+                    span{
+                        font-size: 16px;
+
+                    }
+                }
+                
+            }
+
+        }
+    }
+
+}
